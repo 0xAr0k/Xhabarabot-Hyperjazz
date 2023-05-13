@@ -1,14 +1,9 @@
-require('p5');
-require('p5/lib/addons/p5.sound')
+import "p5/lib/addons/p5.sound";
+import * as p5 from "p5";
 
 
 // GLOBAL VARS & TYPES
 let numberOfShapesControl: p5.Element;
-
-
-let mySound1: p5.Element;
-let mySound2: p5.Element;
-let mySound3: p5.Element;
 
 let ellipses: number[] = [];
 let paused: boolean = true;
@@ -17,13 +12,13 @@ let prevMouseX: number = 0;
 let prevMouseY: number = 0;
 
 interface ISound {
-  mySound1: p5.Element;
-  mySound2: p5.Element;
-  mySound3: p5.Element;
+  mySound1: p5.SoundFile;
+  mySound2: p5.SoundFile;
+  mySound3: p5.SoundFile;
 }
 
 const preload = (params: ISound) => {
-  params.mySound1 = loadSound()
+  params.mySound1 = loadSound("")
 }
 
 // P5 WILL AUTOMATICALLY USE GLOBAL MODE IF A DRAW() FUNCTION IS DEFINED
