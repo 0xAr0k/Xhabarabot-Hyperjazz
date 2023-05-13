@@ -45,11 +45,15 @@ interface ISound {
 }
 
 const preload = (params: ISound) => {
-  params.mySound1 = loadSound("")
+  params.mySound1 = loadSound("");
+  params.mySound2 = loadSound("");
+  params.mySound3 = loadSound("");
 }
 
 const startSketch = (params: ISound) => {
   params.mySound1.loop();
+  params.mySound2.loop();
+  params.mySound3.loop();
 }
 
 const saveSketch = () => {
@@ -65,9 +69,7 @@ function startStop(params: ISound) {
 }
 
 // P5 WILL AUTOMATICALLY USE GLOBAL MODE IF A DRAW() FUNCTION IS DEFINED
-function setup(
-  params: ISound
-  ) {
+function setup(params: ISound) {
   console.log("🚀 - Setup initialized - P5 is running");
 
   createCanvas(windowWidth, windowHeight)
